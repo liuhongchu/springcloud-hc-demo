@@ -1,0 +1,20 @@
+
+server:
+  port: 8050
+
+spring:
+  cloud:
+    consul:
+      port: 8500
+      host: localhost
+    discovery:
+       ##配置服务注册到Consul上
+      register: true
+      ##配置服务健康检查地址，供Consul调用
+      healthCheckPath: /health
+      ##Consul 健康检查频率
+      healthCheckInterval: 2s
+      ##配置注册到Consul服务id
+      instance-id: order-servic
+  application:
+    name: hc-consul
